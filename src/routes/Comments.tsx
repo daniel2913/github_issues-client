@@ -22,7 +22,7 @@ export const commentsRoute: ()=>RouteObject = ()=>({
 
 		const queryFn = async ({ pageParam }: { pageParam: string }) => {
 			const res = await fetch(
-				`/api/comments/?owner=${owner}&repo_name=${repoName}&issue_number=${issueNumber}&after=${pageParam}`,
+				`/api/comments?owner=${owner}&repo_name=${repoName}&issue_number=${issueNumber}&after=${pageParam}`,
 			);
 			const commentsData = await res.json();
 			return rectComments(commentsData);
@@ -54,7 +54,7 @@ async function fetchIssueDetails(
 	issueNumber: string,
 ) {
 	const res = await fetch(
-		`/api/issue_details/?owner=${owner}&repo_name=${repoName}&issue_number=${issueNumber}`,
+		`/api/issue_details?owner=${owner}&repo_name=${repoName}&issue_number=${issueNumber}`,
 	);
 	const issueData = await res.json();
 	return rectDetailedIssue(issueData);

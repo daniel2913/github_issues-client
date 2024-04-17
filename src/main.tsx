@@ -37,7 +37,7 @@ const Router = createBrowserRouter([
 				Component: NotAllowed
 			},
 			{
-				path: "not_found",
+				path: "*",
 				Component: NotFound,
 			},
 			{

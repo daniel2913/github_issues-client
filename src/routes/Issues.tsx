@@ -15,7 +15,7 @@ export const repoRoute: RouteObject = {
 
 		const queryFn = async ({ pageParam }: { pageParam: string }) => {
 			const res = await fetch(
-				`/api/issues/?owner=${owner}&repo_name=${repoName}&after=${pageParam}`,
+				`/api/issues?owner=${owner}&repo_name=${repoName}&after=${pageParam}`,
 			);
 			const issuesData = await res.json();
 			return rectIssues(issuesData);

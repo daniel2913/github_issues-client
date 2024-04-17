@@ -9,7 +9,7 @@ export const authRoute: RouteObject = {
 		if (code === "") {
 			return redirect("/auth_failed");
 		}
-		const res = await fetch(`/api/auth/signin/?code=${code}`, {
+		const res = await fetch(`/api/auth/signin?code=${code}`, {
 			method: "GET",
 		});
 		if (!res.ok) {

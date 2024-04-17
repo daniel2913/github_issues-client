@@ -5,7 +5,7 @@ import {
 import { GenericList } from "../components/GenericList";
 import { Repo } from "../components/Repo";
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { SearchLayout } from "./searchLayout";
+import { SearchLayout } from "./SearchLayout";
 import { rectRepos } from "../data/rectifiers";
 import { queryClient } from "../main";
 
