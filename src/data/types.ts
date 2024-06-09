@@ -1,4 +1,4 @@
-import type { rectComments, rectDetailedIssue, rectIssues, rectRepos } from "./rectifiers";
+import { rectComments, rectDetailedIssue, rectIssues, rectRepos } from "./rectifiers";
 
 type Author = {
 	login: string;

@@ -7,6 +7,8 @@ type ErrorPageProps = {
 	description: string
 }
 
+const clientId = import.meta.env.VITE_CLIENT_ID
+
 function ErrorPage(props: ErrorPageProps) {
 	return (
 		<div className="absolute right-1/2 bottom-1/2 translate-x-1/2 translate-y-1/2 bg-black flex items-center justify-center">
@@ -29,7 +31,7 @@ export function AuthError() {
 	return (
 		<ErrorPage title="Authentication failed" description="Sorry, your authentication failed. Please try again.">
 			<Link
-				to={`https://github.com/login/oauth/authorize?scope=public_repo&client_id=f510dbaedecaf3df4b62&redirect=${document.referrer}`}
+				to={`https://github.com/login/oauth/authorize?scope=public_repo&client_id=${clientId}&redirect=${document.referrer}`}
 				className="flex gap-2 items-center bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
 			>
 				<GHIcon />
@@ -70,7 +72,7 @@ export function NotAllowed() {
 	return (
 		<ErrorPage title="Not Allowed" description="You do not have permission to access this page.">
 			<Link
-				to={`https://github.com/login/oauth/authorize?scope=public_repo&client_id=f510dbaedecaf3df4b62&redirect=${document.referrer}`}
+				to={`https://github.com/login/oauth/authorize?scope=public_repo&client_id=${clientId}&redirect=${document.referrer}`}
 				className="flex gap-2 items-center bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
 			>
 				<GHIcon />

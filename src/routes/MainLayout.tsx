@@ -3,6 +3,10 @@ import { useAuth } from "./Auth";
 import GHIcon from "../data/GHIcon";
 import { queryClient } from "../main";
 
+
+const clientId: string | null = import.meta.env.VITE_CLIENT_ID
+
+console.log(clientId)
 export default function MainLayout() {
 	const { data, isLoading, refetch } = useAuth();
 	const navigate = useNavigate();
@@ -72,9 +76,9 @@ export default function MainLayout() {
 					) : isLoading ? (
 						<p className="text-xl font-bold">Loading</p>
 					) : (
-						<a
+						clientId && <a
 							className="text-xl flex gap-2 font-bold"
-							href="https://github.com/login/oauth/authorize?scope=public_repo&client_id=f510dbaedecaf3df4b62"
+							href={`https://github.com/login/oauth/authorize?scope=public_repo&client_id=${clientId}`}
 						>
 							<GHIcon />
 							Sign in

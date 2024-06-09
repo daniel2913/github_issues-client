@@ -69,7 +69,7 @@ function ErrorElement(props: ErrorElementProps) {
 	return (
 		<div className="size-full flex justify-center items-center text-lg font-bold">
 			<button onClick={props.onClick} type="button" className="rounded-lg bg-red-400 px-2 py-1">
-				<span claessName="">Some Error Occured</span>
+				<span className="mb-2">Some Error Occured</span>
 				<br />
 				<span>Try Again</span>
 			</button>
